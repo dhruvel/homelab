@@ -24,7 +24,7 @@ check_success "Changing directory to /home/$USER/sonarr"
 
 # Create docker-compose.yml file
 echo "Creating docker-compose.yml file..."
-cat <<EOL > docker-compose.yml
+sudo cat <<EOL > docker-compose.yml
 services:
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
