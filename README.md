@@ -19,6 +19,7 @@ A simple script to install portainer on Raspberry Pi
 ```
 wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_portainer.sh | bash
 ```
+Portainer will be available at `http://<raspberrypi_ip>:9000`
 
 ## Mount External Hard Drive
 
