@@ -1,5 +1,5 @@
 sudo apt update -y
-sudo mkdir -p /home/$USER/pi_hole || error "Failed to create directory /home/$USER/pi_hole"
+sudo mkdir -p /home/$USER/pi_hole
 docker run -d \
     --name pihole \
     -p 53:53/tcp -p 53:53/udp \
@@ -13,4 +13,4 @@ docker run -d \
     -e VIRTUAL_HOST="pi.hole" \
     -e PROXY_LOCATION="pi.hole" \
     -e FTLCONF_LOCAL_IPV4="127.0.0.1" \
-    pihole/pihole:latest || error "Failed to run Pi-hole container"
+    pihole/pihole:latest

@@ -1,3 +1,3 @@
 sudo apt update -y
-sudo docker pull portainer/portainer-ce:latest || error "Failed to pull Portainer image"
-sudo docker run -d -p 9000:9000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest || error "Failed to run Portainer container"
+sudo docker pull portainer/portainer-ce:latest
+sudo docker run -d -p 9000:9000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest || echo "Failed to run Portainer container"
