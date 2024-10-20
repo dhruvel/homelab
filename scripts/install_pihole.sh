@@ -1,16 +1,53 @@
+#!/bin/bash
+
+# Function to check the success of the last command and exit if it failed
+check_success() {
+    if [ $? -ne 0 ]; then
+        echo "Error: $1 failed."
+        exit 1
+    fi
+}
+
+# Update package list
+echo "Updating package list..."
 sudo apt update -y
+check_success "Package list update"
+
+# Create necessary directories
+echo "Creating necessary directories..."
 sudo mkdir -p /home/$USER/pi_hole
-docker run -d \
-    --name pihole \
-    -p 53:53/tcp -p 53:53/udp \
-    -p 4000:80 \
-    -e TZ="Asia/Kolkata" \
-    -v "/home/$USER/pi_hole/etc-pihole:/etc/pihole/" \
-    -v "/home/$USER/pi_hole/etc-dnsmasq.d:/etc/dnsmasq.d/" \
-    --dns=127.0.0.1 --dns=1.1.1.1 \
-    --restart=unless-stopped \
-    --hostname pi.hole \
-    -e VIRTUAL_HOST="pi.hole" \
-    -e PROXY_LOCATION="pi.hole" \
-    -e FTLCONF_LOCAL_IPV4="127.0.0.1" \
-    pihole/pihole:latest
+check_success "Directory creation"
+
+# Create docker-compose.yml file
+echo "Creating docker-compose.yml file..."
+cat <<EOL > docker-compose.yml
+version: '3'
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "4000:80"
+    environment:
+      TZ: "${TZ:-Asia/Kolkata}"
+      VIRTUAL_HOST: "${VIRTUAL_HOST:-pi.hole}"
+      PROXY_LOCATION: "${PROXY_LOCATION:-pi.hole}"
+      FTLCONF_LOCAL_IPV4: "${FTLCONF_LOCAL_IPV4:-127.0.0.1}"
+    volumes:
+      - "/home/$USER/pi_hole/etc-pihole:/etc/pihole"
+      - "/home/$USER/pi_hole/etc-dnsmasq.d:/etc/dnsmasq.d"
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+    restart: unless-stopped
+    hostname: pi.hole
+EOL
+check_success "docker-compose.yml creation"
+
+# Bring up the Pi-hole container using docker-compose
+echo "Bringing up the Pi-hole container using docker-compose..."
+sudo docker-compose up -d
+check_success "docker-compose up"
