@@ -28,6 +28,13 @@ wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install
 ```
 Pi-hole will be available at `http://<raspberrypi_ip>:4000/admin`
 
+## 5. Install Plex
+A simple script to install Plex on Raspberry Pi
+```
+wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_plex.sh | bash
+```
+Plex will be available at `http://<raspberrypi_ip>:32400/web`
+
 ## Mount External Hard Drive
 
 ```
