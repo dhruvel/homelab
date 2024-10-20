@@ -3,16 +3,21 @@ Raspberry Pi HomeLab
 
 # Installation Scripts
 
-## 1. Install Docker
+## 1. Install Tailscale
+A simple script to install Tailscale on Raspberry Pi (Or any Linux Distro)
+```
+wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_tailscale.sh | bash
+```
+
+## 2. Install Docker
 A simple script to install docker on Raspberry Pi (Or any Linux Distro)
 ```
 wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_docker.sh | bash
 ```
-
-## 2. Install Tailscale
-A simple script to install Tailscale on Raspberry Pi (Or any Linux Distro)
+## 3. Install Portainer
+A simple script to install portainer on Raspberry Pi
 ```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_tailscale.sh | bash
+wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_portainer.sh | bash
 ```
 
 ## Mount External Hard Drive
