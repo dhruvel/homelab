@@ -26,7 +26,7 @@ A simple script to install Pi-hole on Raspberry Pi
 ```
 wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_pihole.sh | bash
 ```
-Pi-hole will be available at `http://<raspberrypi_ip>/admin`
+Pi-hole will be available at `http://<raspberrypi_ip>:4000/admin`
 
 
 ## Mount External Hard Drive
