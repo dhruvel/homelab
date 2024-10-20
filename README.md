@@ -28,20 +28,6 @@ wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install
 ```
 Pi-hole will be available at `http://<raspberrypi_ip>:4000/admin`
 
-## 5. Install Sonarr
-A simple script to install Sonarr on Raspberry Pi
-```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_sonarr.sh | bash
-```
-Sonarr will be available at `http://<raspberrypi_ip>:8989`
-
-## 6. Install Radarr
-A simple script to install Radarr on Raspberry Pi
-```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_radarr.sh | bash
-```
-Radarr will be available at `http://<raspberrypi_ip>:7878`
-
 ## Mount External Hard Drive
 
 ```
