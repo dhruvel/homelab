@@ -30,10 +30,10 @@ services:
       - "53:53/udp"
       - "4000:80"
     environment:
-      TZ: "${TZ:-Asia/Kolkata}"
-      VIRTUAL_HOST: "${VIRTUAL_HOST:-pi.hole}"
-      PROXY_LOCATION: "${PROXY_LOCATION:-pi.hole}"
-      FTLCONF_LOCAL_IPV4: "${FTLCONF_LOCAL_IPV4:-127.0.0.1}"
+      TZ: Asia/Kolkata
+      VIRTUAL_HOST: pi.hole
+      PROXY_LOCATION: pi.hole
+      FTLCONF_LOCAL_IPV4: 127.0.0.1
     volumes:
       - "/home/$USER/pi_hole/etc-pihole:/etc/pihole"
       - "/home/$USER/pi_hole/etc-dnsmasq.d:/etc/dnsmasq.d"

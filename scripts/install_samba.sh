@@ -21,10 +21,10 @@ check_success "Samba installation"
 echo "Appending Samba configuration to smb.conf..."
 sudo tee -a /etc/samba/smb.conf > /dev/null <<EOL
 [shared]
-   path = /mnt/${EXTERNAL_DRIVE:-sda}
-   browseable = ${BROWSEABLE:-yes}
-   read only = ${READONLY:-no}
-   guest ok = ${GUESTOK:-yes}
+   path = /mnt/sda
+   browseable = yes
+   read only = no
+   guest ok = yes
 EOL
 check_success "Appending Samba configuration"
 

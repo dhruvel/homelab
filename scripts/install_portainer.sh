@@ -20,19 +20,19 @@ fi
 
 # Create docker-compose.yml file
 echo "Creating docker-compose.yml file..."
-cat <<EOL > docker-compose.yml
+sudo cat <<EOL > docker-compose.yml
 version: '3'
 
 services:
   portainer:
-    image: ${IMAGE_NAME:-portainer/portainer-ce:latest}
-    container_name: ${CONTAINER_NAME:-portainer}
+    image: portainer/portainer-ce:latest
+    container_name: portainer
     ports:
-      - "${PORTAINER_PORT:-9000}:9000"
-      - "${PORTAINER_PORT_SSL:-9443}:9443"
+      - 9000:9000
+      - 9443
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "portainer_data:/data"
     restart: always
 
 volumes:

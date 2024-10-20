@@ -34,9 +34,9 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - "/path/to/sonarr/data:/config"
-      - "/path/to/tvseries:/tv" #optional
-      - "/path/to/downloadclient-downloads:/downloads" #optional
+      - "/home/$USER/sonarr/config:/config"
+      - "/mnt/sda/media/tv:/tv" #optional
+      - "/mnt/sda/media/torrent:/downloads" #optional
     ports:
       - 8989:8989
     restart: unless-stopped
