@@ -35,6 +35,12 @@ wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install
 ```
 Sonarr will be available at `http://<raspberrypi_ip>:8989`
 
+## 6. Install Radarr
+A simple script to install Radarr on Raspberry Pi
+```
+wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_radarr.sh | bash
+```
+Radarr will be available at `http://<raspberrypi_ip>:7878`
 
 ## Mount External Hard Drive
 
