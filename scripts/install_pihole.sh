@@ -21,8 +21,6 @@ check_success "Directory creation"
 # Create docker-compose.yml file
 echo "Creating docker-compose.yml file..."
 cat <<EOL > docker-compose.yml
-version: '3'
-
 services:
   pihole:
     container_name: pihole

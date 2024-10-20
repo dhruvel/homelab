@@ -8,18 +8,21 @@ check_success() {
     fi
 }
 
-# Update package list 
+# Update package list
 echo "Updating package list..."
 sudo apt update -y
 check_success "Package list update"
 
 # Create necessary directories
 echo "Creating necessary directories..."
-sudo mkdir -p /home/$USER/sonarr
+mkdir -p /home/$USER/sonarr
 check_success "Directory creation"
 
+# Change to the created directory
+cd /home/$USER/sonarr
+check_success "Changing directory to /home/$USER/sonarr"
+
 # Create docker-compose.yml file
-sudo cd /home/$USER/sonarr
 echo "Creating docker-compose.yml file..."
 cat <<EOL > docker-compose.yml
 services:
@@ -31,9 +34,9 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - "${/path/to/sonarr/data}":/config
-      - "${/path/to/tvseries}":/tv #optional
-      - "${/path/to/downloadclient-downloads}":/downloads #optional
+      - "/path/to/sonarr/data:/config"
+      - "/path/to/tvseries:/tv" #optional
+      - "/path/to/downloadclient-downloads:/downloads" #optional
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -43,3 +46,4 @@ check_success "docker-compose.yml creation"
 # Bring up the Sonarr container using docker-compose
 echo "Bringing up the Sonarr container using docker-compose..."
 sudo docker-compose up -d
+check_success "docker-compose up"
