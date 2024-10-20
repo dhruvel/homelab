@@ -21,6 +21,14 @@ wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install
 ```
 Portainer will be available at `http://<raspberrypi_ip>:9000`
 
+## 4. Install Pi-hole
+A simple script to install Pi-hole on Raspberry Pi
+```
+wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_pihole.sh | bash
+```
+Pi-hole will be available at `http://<raspberrypi_ip>/admin`
+
+
 ## Mount External Hard Drive
 
 ```
