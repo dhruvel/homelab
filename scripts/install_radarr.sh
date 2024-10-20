@@ -24,7 +24,7 @@ check_success "Changing directory to /home/$USER/radarr"
 
 # Create docker-compose.yml file
 echo "Creating docker-compose.yml file..."
-sudo cat <<EOL > docker-compose.yml
+cat <<EOL > docker-compose.yml
 services:
   radarr:
     image: lscr.io/linuxserver/radarr:latest
