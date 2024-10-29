@@ -103,4 +103,7 @@ guest ok = yes
 sudo systemctl restart smbd
 ```
 
+![image](https://github.com/user-attachments/assets/abdaf63d-c807-4822-9db1-83554d13cb61)
+
+
 
