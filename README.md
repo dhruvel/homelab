@@ -93,7 +93,7 @@ sudo nano /etc/samba/smb.conf
 ```
 
 ```
-[ExternalDrive]
+[shared]
 path = /mnt/external_drive
 browseable = yes
 read only = no
