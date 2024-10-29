@@ -81,3 +81,26 @@ mmcblk0     179:0    0 59.5G  0 disk
 └─mmcblk0p2 179:2    0   59G  0 part /
 ```
 
+## Install and configure samba (SMB)
+
+```
+sudo apt update
+sudo apt install samba
+```
+
+```
+sudo nano /etc/samba/smb.conf
+```
+
+```
+[ExternalDrive]
+path = /mnt/external_drive
+browseable = yes
+read only = no
+guest ok = yes
+```
+```
+sudo systemctl restart smbd
+```
+
+
