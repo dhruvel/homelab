@@ -66,16 +66,16 @@ mmcblk0     179:0    0 59.5G  0 disk
 # Identify the disk (e.g., /dev/sda1)
 
 # Create a mount point (e.g., /mnt/external_disk)
-dhruvel@raspberrypiHL:/ $ sudo mkdir -p /mnt/sda
+dhruvel@raspberrypiHL:/ $ sudo mkdir -p /media/hdd
 
 # Mount the disk
-dhruvel@raspberrypiHL:/ $ sudo mount /dev/sda1 /mnt/sda
+dhruvel@raspberrypiHL:/ $ sudo mount /dev/sda1 /media/hdd
 
 # Verify the disk is mounted
 dhruvel@raspberrypiHL:/ $ lsblk
 NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 sda           8:0    0  4.5T  0 disk 
-└─sda1        8:1    0  4.5T  0 part /mnt/sda
+└─sda1        8:1    0  4.5T  0 part /media/hdd
 mmcblk0     179:0    0 59.5G  0 disk 
 ├─mmcblk0p1 179:1    0  512M  0 part /boot/firmware
 └─mmcblk0p2 179:2    0   59G  0 part /
