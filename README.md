@@ -94,7 +94,7 @@ sudo nano /etc/samba/smb.conf
 
 ```
 [shared]
-path = /mnt/external_drive
+path = /media/external_device
 browseable = yes
 read only = no
 guest ok = yes
