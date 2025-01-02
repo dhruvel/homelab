@@ -47,10 +47,19 @@ lsblk
 sudo mkdir -p /mnt/external_disk
 
 # Mount the disk
-sudo mount /dev/sdb1 /mnt/external_disk
+sudo mount /dev/sda1 /mnt/external_disk
 
 # Verify the disk is mounted
 lsblk
+```
+## Automount on Boot (Optional)
+
+```
+# Add the external_disk entry to the fstab file
+sudo nano /etc/fstab
+
+# Add the following line at the end of the file
+/dev/sda1 /mnt/external_hdd auto defaults 0 0
 ```
 ### Example:
 ```
@@ -79,6 +88,12 @@ sda           8:0    0  4.5T  0 disk
 mmcblk0     179:0    0 59.5G  0 disk 
 ├─mmcblk0p1 179:1    0  512M  0 part /boot/firmware
 └─mmcblk0p2 179:2    0   59G  0 part /
+
+# Add the external_disk entry to the fstab file
+sudo nano /etc/fstab
+
+# Add the following line at the end of the file
+/dev/sda1 /media/hdd auto defaults 0 0
 ```
 
 ## Install and configure samba (SMB)
