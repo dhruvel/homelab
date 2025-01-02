@@ -35,6 +35,12 @@ wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install
 ```
 Plex will be available at `http://<raspberrypi_ip>:32400/web`
 
+## 6. Install qBittorrent
+A simple script to install qBittorrent on Raspberry Pi
+```
+wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_qbittorrent.sh | bash
+```
+
 ## Mount External Hard Drive
 
 ```
