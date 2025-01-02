@@ -40,6 +40,11 @@ A simple script to install qBittorrent on Raspberry Pi
 ```
 wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_qbittorrent.sh | bash
 ```
+qBittorrent will be available at `http://<raspberrypi_ip>:8080`
+```
+The Web UI administrator username is: admin 
+The Web UI administrator password has not been changed from the default: adminadmin
+```
 
 ## Mount External Hard Drive
 
