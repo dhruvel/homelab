@@ -1,6 +1,14 @@
 # HomeLab
 Raspberry Pi HomeLab
 
+# Configuration
+
+Configure SSH - On your Mac
+```
+ssh-copy-id -R <USER>@<RPI-IP>
+ssh-copy-id <USER>@<RPI-ID>
+```
+
 # Installation Scripts
 
 ## 1. Install Tailscale
