@@ -5,7 +5,7 @@ Raspberry Pi HomeLab
 
 Configure SSH - On your Mac
 ```
-ssh-copy-id -R <USER>@<RPI-IP>
+ssh-keygen -R <USER>@<RPI-IP>
 ssh-copy-id <USER>@<RPI-ID>
 ```
 
