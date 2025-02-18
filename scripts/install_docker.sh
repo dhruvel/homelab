@@ -24,4 +24,5 @@ sudo apt update -y || error "Failed to update."
 # Install Docker
 curl -sSL https://get.docker.com | sh || error "Failed to install Docker."
 sudo usermod -aG docker $USER || error "Failed to add user to Docker usergroup."
-echo "Please logoff/reboot before running docker."
+echo "Rebooting now..."
+sudo reboot now
