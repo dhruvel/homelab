@@ -59,6 +59,11 @@ test $? -eq 0 || echo 'An error occurred.'
 ```
 [Performance Optimization Guide](https://tailscale.com/kb/1320/performance-best-practices#ethtool-configuration)
 
+### 2.6 Advertise Exit Nodes
+```sh
+tailscale up --advertise-exit-node --accept-routes
+```
+
 ---
 
 ## References
