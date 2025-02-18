@@ -4,8 +4,33 @@ Raspberry Pi HomeLab
 # Configuration
 
 Configure SSH - On your Mac
+
+To remove a single SSH key from your known hosts on a Mac, you can use the `ssh-keygen` command. Here is how you can do it:
+
+1. Open the Terminal.
+2. Run the following command, replacing `hostname` with the actual hostname or IP address of the server you want to remove:
+
+```sh
+ssh-keygen -R hostname
 ```
-ssh-keygen -R <USER>@<RPI-IP>
+
+For example, if you want to remove the key for `example.com`, you would run:
+
+```sh
+ssh-keygen -R example.com
+```
+
+This command will remove the corresponding entry from the `~/.ssh/known_hosts` file.
+
+If you need to remove a key for a specific IP address, you can use the IP address instead of the hostname:
+
+```sh
+ssh-keygen -R 192.168.1.1
+```
+
+This will ensure that the next time you connect to the server, you will be prompted to accept the new key.
+
+```
 ssh-copy-id <USER>@<RPI-ID>
 ```
 
