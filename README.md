@@ -39,39 +39,39 @@ ssh-copy-id <USER>@<RPI-ID>
 ## 1. Install Tailscale
 A simple script to install Tailscale on Raspberry Pi (Or any Linux Distro)
 ```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_tailscale.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_tailscale.sh | sh
 ```
 
 ## 2. Install Docker
 A simple script to install docker on Raspberry Pi (Or any Linux Distro)
 ```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_docker.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_docker.sh | sh
 ```
 ## 3. Install Portainer
 A simple script to install portainer on Raspberry Pi
 ```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_portainer.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_portainer.sh | sh
 ```
 Portainer will be available at `http://<raspberrypi_ip>:9000`
 
 ## 4. Install Pi-hole
 A simple script to install Pi-hole on Raspberry Pi
 ```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_pihole.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_pihole.sh | sh
 ```
 Pi-hole will be available at `http://<raspberrypi_ip>:4000/admin`
 
 ## 5. Install Plex
 A simple script to install Plex on Raspberry Pi
 ```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_plex.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_plex.sh | sh
 ```
 Plex will be available at `http://<raspberrypi_ip>:32400/web`
 
 ## 6. Install qBittorrent
 A simple script to install qBittorrent on Raspberry Pi
 ```
-wget -qO- https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_qbittorrent.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_qbittorrent.sh | sh
 ```
 qBittorrent will be available at `http://<raspberrypi_ip>:8080`
 ```
