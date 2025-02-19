@@ -9,3 +9,5 @@ sudo apt install plexmediaserver -y
 # Start Plex Media Server
 sudo systemctl start plexmediaserver
 sudo systemctl enable plexmediaserver
+
+echo "running on port: 32400"
