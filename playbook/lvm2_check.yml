@@ -1,0 +1,9 @@
+---
+  - name: Check lvm2 package is installed or not
+    hosts: rpi
+    become: yes
+    tasks:
+      - name: Check lvm2 package is installed or not
+        apt: 
+          name: lvm2
+          state: latest

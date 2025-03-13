@@ -1,0 +1,16 @@
+---
+  - name: Upgrade all packages
+    hosts: rpi
+    become: yes
+    tasks:
+      - name: Update apt cache
+        apt:
+          update_cache: yes
+
+      - name: Upgrade all packages
+        apt:
+          upgrade: dist
+          update_cache: yes
+          autoremove: yes
+          autoclean: yes
+          force_apt_get: yes

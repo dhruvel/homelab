@@ -1,0 +1,46 @@
+---
+  - name: configure ssh for ceph installation
+    hosts: rpi
+    become: yes
+    tasks:
+      - name: Upgrade all packages
+        apt:
+          update_cache: yes
+          upgrade: dist
+          autoremove: yes
+          autoclean: yes
+          force_apt_get: yes
+
+      - name: Check if root login is enabled
+        command: grep -E '^PermitRootLogin yes' /etc/ssh/sshd_config
+        register: root_login_enabled
+        ignore_errors: yes
+
+      - name: Enable root login
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: '^#?PermitRootLogin'
+          line: 'PermitRootLogin yes'
+          state: present
+          backup: yes
+        when: root_login_enabled.rc != 0
+
+      - name: Restart ssh service
+        service:
+          name: ssh
+          state: restarted
+
+      - name: Check if Docker is installed
+        stat:
+          path: /usr/bin/docker
+        register: docker_installed
+
+      - name: Install Docker using curl
+        shell: curl -fsSL https://raw.githubusercontent.com/dhruvel/homelab/main/scripts/install_docker_ubuntu.sh | sh
+        when: not docker_installed.stat.exists 
+
+      - name: Check if LVM2 is installed
+        apt:
+          name: lvm2
+          state: latest
+        

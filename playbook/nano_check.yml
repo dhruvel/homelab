@@ -1,0 +1,9 @@
+---
+  - name: Check nano package is installed or not
+    hosts: rpi
+    become: yes
+    tasks:
+      - name: Check nano package is installed or not
+        apt: 
+          name: nano
+          state: latest
